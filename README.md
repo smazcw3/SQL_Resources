@@ -19,6 +19,7 @@ ADDRESS CHAR(50),
 SALARY REAL
 );
 `
+
 `
 CREATE TABLE DEPARTMENT
 (
@@ -31,6 +32,7 @@ EMP_ID INT NOT NULL
 Listing DATABASES and TABLES
 ----------------------------
 `.databases`  # Returns list of databases
+
 `.tables`  # Returns list of tables
 
 
@@ -55,15 +57,15 @@ DROPPING TABLES
 
 POPULATING the TABLE
 --------------------
-`
-INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (1, 'Paul', 32, 'California', 2000.00);
 
-INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (2, 'Allen', 23, 'Norway', 15000.00);
+`INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (1, 'Paul', 32, 'California', 2000.00);`
 
-INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (3, 'Teddy', 23, 'Norway', 20000.00);
+`INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (2, 'Allen', 23, 'Norway', 15000.00);`
+
+`INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (3, 'Teddy', 23, 'Norway', 20000.00);`
 
 INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
 VALUES (4, 'Mark', 25, 'RichMond', 65000.00);

@@ -476,7 +476,7 @@ A subquery is used to return data that will be used in the main query as a condi
 
 INJECTION
 ---------
-If you take user input through a webpage and insert it into a SQLite database there's a chance that you have left yourself wide open for a security issue known as SQL Injection. In this chapter, you will learn how to help prevent this from happening and help you secure your scripts and SQLite statements.
+If you take user input through a webpage and insert it into a SQLite database there's a chance that you have left yourself wide open for a security issue known as SQL Injection.
 
 Injection usually occurs when you ask a user for input, like their name, and instead of a name they give you a SQLite statement that you will unknowingly run on your database.
 
@@ -486,33 +486,3 @@ Never trust user provided data, process this data only after validation; as a ru
 VACUUM
 ------
 VACUUM command cleans the main database by copying its contents to a temporary database file and reloading the original database file from the copy. This eliminates free pages, aligns table data to be contiguous, and otherwise cleans up the database file structure.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

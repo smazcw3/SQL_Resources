@@ -4,7 +4,7 @@ This is intended to run SQL queries using sqlite.
 
 CREATING DATABASES
 ------------------
-sqlite3 testDB.db
+`sqlite3 testDB.db`
 
 
 CREATING TABLES

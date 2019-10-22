@@ -1,6 +1,6 @@
 # SQL_Resources
 
-This is intended to run SQL queries using sqlite. 
+This is intended to run SQL queries using `sqlite`. 
 
 CREATING DATABASES
 ------------------
@@ -178,43 +178,35 @@ DELETING THE RECORD
 
 LIMITING the data returned by query
 -----------------------------------
+`SELECT * FROM COMPANY LIMIT 6;`
 
-SELECT * FROM COMPANY LIMIT 6;
+`SELECT * FROM COMPANY LIMIT 3 OFFSET 2;`  # picks up 3 records starting from the 3rd position.
 
-SELECT * FROM COMPANY LIMIT 3 OFFSET 2;  # picks up 3 records starting from the 3rd position.
-
-
-SELECT * FROM COMPANY ORDER BY SALARY ASC;
+`SELECT * FROM COMPANY ORDER BY SALARY ASC;`
 
 
 ORDER (Sort) the data
 ---------------------
-SELECT * FROM COMPANY WHERE SALARY >=20000 ORDER BY SALARY DESC LIMIT 2;
+`SELECT * FROM COMPANY WHERE SALARY >=20000 ORDER BY SALARY DESC LIMIT 2;`
 
-SELECT * FROM COMPANY WHERE AGE LIKE '2%' AND SALARY >= 10000 ORDER BY SALARY DESC LIMIT 4;
+`SELECT * FROM COMPANY WHERE AGE LIKE '2%' AND SALARY >= 10000 ORDER BY SALARY DESC LIMIT 4;`
 
 
 GROUP-ing the data
 ------------------
-SELECT NAME, SUM(SALARY) FROM COMPANY GROUP BY NAME ORDER BY NAME;
+`SELECT NAME, SUM(SALARY) FROM COMPANY GROUP BY NAME ORDER BY NAME;`
 
 
 HAVING clause
 -------------
-SELECT * FROM COMPANY GROUP BY NAME HAVING COUNT(NAME) < 2;
+`SELECT * FROM COMPANY GROUP BY NAME HAVING COUNT(NAME) < 2;`
 
 
 DISTINCT clause
 ---------------
-SELECT DISTINCT NAME FROM COMPANY;
+`SELECT DISTINCT NAME FROM COMPANY;`
 
 -----------------------------------------------------------------------------------------------------------
-
-PRAGMA
-------
-
-
-
 
 CONSTRAINTS
 -----------
@@ -224,6 +216,7 @@ DEFAULT CONSTRAINT
 ------------------
 The DEFAULT constraint provides a default value to a column when the INSERT INTO statement does not provide a specific value.
 
+~~~
 CREATE TABLE COMPANY2
 (
 ID INT PRIMARY KEY NOT NULL,
@@ -232,13 +225,13 @@ AGE INT NOT NULL,
 ADDRESS CHAR(50),
 SALARY REAL DEFAULT 50000.00
 );
-
+~~~
 
 UNIQUE CONSTRAINT
 -----------------
 The UNIQUE Constraint prevents two records from having identical values in a particular column.
 
-
+~~~
 CREATE TABLE COMPANY3
 (
 ID INT PRIMARY KEY NOT NULL,
@@ -247,7 +240,7 @@ AGE INT NOT NULL UNIQUE,
 ADDRESS CHAR(50),
 SALARY REAL DEFAULT 50000.00
 );
-
+~~~
 
 PRIMARY KEY CONSTRAINT
 ----------------------
@@ -255,6 +248,7 @@ The PRIMARY KEY constraint uniquely identifies each record in a database table. 
 
 A table can have only one primary key, which may consist of single or multiple fields. When multiple fields are used as a primary key, they are called a composite key.
 
+~~~
 CREATE TABLE COMPANY4
 (
 ID INT PRIMARY KEY NOT NULL,
@@ -263,7 +257,7 @@ AGE INT NOT NULL UNIQUE,
 ADDRESS CHAR(50),
 SALARY REAL DEFAULT 50000.00
 );
-
+~~~
 
 CHECK CONSTRAINT
 ----------------
@@ -294,7 +288,7 @@ Cross Join
 ----------
 CROSS JOIN matches every row of the first table with every row of the second table. If the input tables have x and y row, respectively, the resulting table will have x*y row. Because CROSS JOINs have the potential to generate extremely large tables, care must be taken to only use them when appropriate.
 
-SELECT EMP_ID, NAME, DEPT FROM COMPANY CROSS JOIN DEPARTMENT;
+`SELECT EMP_ID, NAME, DEPT FROM COMPANY CROSS JOIN DEPARTMENT;`
 
 
 Inner Join
@@ -333,10 +327,11 @@ RIGHT JOIN
 ----------
 The RIGHT JOIN keyword returns all records from the right table (table2), and the matched records from the left table (table1). The result is NULL from the left side, when there is no match.
 
+~~~
 SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
 FROM Orders RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
 ORDER BY Orders.OrderID;
-
+~~~
 
 FULL OUTER JOIN
 ---------------

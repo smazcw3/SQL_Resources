@@ -9,7 +9,7 @@ CREATING DATABASES
 
 CREATING TABLES
 ---------------
-
+`
 CREATE TABLE COMPANY
 (
 ID INT PRIMARY KEY NOT NULL,
@@ -18,44 +18,44 @@ AGE INT NOT NULL,
 ADDRESS CHAR(50),
 SALARY REAL
 );
-
-
+`
+`
 CREATE TABLE DEPARTMENT
 (
 ID INT PRIMARY KEY NOT NULL,
 DEPT CHAR(50) NOT NULL,
 EMP_ID INT NOT NULL
 );
-
+`
 
 Listing DATABASES and TABLES
 ----------------------------
-.databases  # Returns list of databases
-.tables  # Returns list of tables
+`.databases`  # Returns list of databases
+`.tables`  # Returns list of tables
 
 
 Attaching a database
 --------------------
 SQLite ATTACH DATABASE statement is used to select a particular database, and after this command, all SQLite statements will be executed under the attached database.
 
-ATTACH DATABASE 'testDB.db' as 'TEST';
+`ATTACH DATABASE 'testDB.db' as 'TEST';`
 
 
 Detaching a database
 --------------------
 SQLite DETACH DATABASE statement is used to detach and dissociate a named database from a database connection which was previously attached using ATTACH statement
 
-DETACH DATABASE 'currentDB';
+`DETACH DATABASE 'currentDB';`
 
 
 DROPPING TABLES
 ----------------
-DROP TABLE COMPANY;
+`DROP TABLE COMPANY;`
 
 
 POPULATING the TABLE
 --------------------
-
+`
 INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
 VALUES (1, 'Paul', 32, 'California', 2000.00);
 
@@ -74,52 +74,51 @@ VALUES (5, 'David', 27, 'Texas', 850000.00);
 INSERT INTO COMPANY VALUES (6, 'Kim', 22, 'South-Hall', 45000.00);
 
 INSERT INTO COMPANY VALUES (7, 'James', 24, 'Housten', 10000.00);
+`
 
 
 
+`INSERT INTO DEPARTMENT VALUES (1, 'IT Billing', 1);`
 
-INSERT INTO DEPARTMENT VALUES (1, 'IT Billing', 1);
+`INSERT INTO DEPARTMENT VALUES (2, 'Engineering', 2);`
 
-INSERT INTO DEPARTMENT VALUES (2, 'Engineering', 2);
+`INSERT INTO DEPARTMENT VALUES (3, 'Finance', 7);`
 
-INSERT INTO DEPARTMENT VALUES (3, 'Finance', 7);
-
-INSERT INTO DEPARTMENT VALUES (4, 'HR', 5);
+`INSERT INTO DEPARTMENT VALUES (4, 'HR', 5);`
 
 
 FORMATTING THE OUTPUT OF A QUERY
 --------------------------------
-.header on
-.mode column
+`.header on`
+`.mode column`
 
-
+`
 SELECT
 FROM
 WHERE
 GROUP BY
 HAVING
 ORDER BY
-
-
+`
 
 EXPRESSIONS
 -----------
 
-SELECT * FROM COMPANY WHERE SALARY = 10000;
+`SELECT * FROM COMPANY WHERE SALARY = 10000;`
 
-SELECT COUNT(*) AS "RECORDS" FROM COMPANY;
-
-
-SELECT * FROM COMPANY WHERE AGE >=25 OR SALARY >= 65000;
-
-SELECT * FROM COMPANY WHERE AGE IS NOT NULL;
+`SELECT COUNT(*) AS "RECORDS" FROM COMPANY;`
 
 
-SELECT * FROM COMPANY WHERE NAME LIKE 'Ki%';  #NAME starts with Ki
+`SELECT * FROM COMPANY WHERE AGE >=25 OR SALARY >= 65000;`
 
-SELECT * FROM COMPANY WHER AGE LIKE '%2'; #AGE ends with 2
+`SELECT * FROM COMPANY WHERE AGE IS NOT NULL;`
 
-SELECT * FROM COMPANY WHERE ADDRESS LIKE '%-%'; #ADDRESS has - inside the address text
+
+`SELECT * FROM COMPANY WHERE NAME LIKE 'Ki%';`  #NAME starts with Ki
+
+`SELECT * FROM COMPANY WHER AGE LIKE '%2';` #AGE ends with 2
+
+`SELECT * FROM COMPANY WHERE ADDRESS LIKE '%-%';` #ADDRESS has - inside the address text
 
 Unlike LIKE operator, GLOB is case sensitive and it follows syntax of UNIX for specifying THE following wildcards.
  - The asterisk sign (*)
@@ -127,11 +126,11 @@ Unlike LIKE operator, GLOB is case sensitive and it follows syntax of UNIX for s
 
 The asterisk sign (*) represents zero or multiple numbers or characters. The question mark (?) represents a single number or character.
 
-SELECT * FROM COMPANY WHERE NAME GLOB 'KI*'; #NAME starts with Ki
+`SELECT * FROM COMPANY WHERE NAME GLOB 'KI*';` #NAME starts with Ki
 
-SELECT * FROM COMPANY WHERE AGE GLOB '*2'; #AGE ends with 2
+`SELECT * FROM COMPANY WHERE AGE GLOB '*2';` #AGE ends with 2
 
-SELECT * FROM COMPANY WHERE ADDRESS GLOB '*-*'; #ADDRESS has - inside the address text
+`SELECT * FROM COMPANY WHERE ADDRESS GLOB '*-*';` #ADDRESS has - inside the address text
 
 
 

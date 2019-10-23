@@ -31,6 +31,46 @@ SELECT * FROM CITY;
 
 ***
 
+**Select By ID**
+
+*Query all columns for a city in CITY with the ID 1661.*
+
+~~~
+SELECT * FROM CITY WHERE ID=1661;
+~~~
+
+***
+
+**Japanese Cities' Attributes**
+
+*Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.*
+
+~~~
+SELECT * FROM CITY WHERE COUNTRYCODE='JPN';
+~~~
+
+***
+
+**Weather Observation Station 1**
+
+*Query a list of CITY and STATE from the STATION table.*
+
+~~~
+SELECT CITY, STATE FROM STATION;
+~~~
+
+***
+
+**Weather Observation Station 3**
+
+*Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.*
+
+~~~
+SELECT DISTINCT(CITY) FROM STATION WHERE ID%2=0;
+~~~
+
+***
+
 **Weather Observation Station 5**
 
 *Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*

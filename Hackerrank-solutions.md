@@ -21,6 +21,16 @@ SELECT NAME FROM CITY WHERE POPULATION > 120000 AND COUNTRYCODE = 'USA';
 
 ***
 
+**Select All**
+
+*Query all columns (attributes) for every row in the CITY table.*
+
+~~~
+SELECT * FROM CITY;
+~~~
+
+***
+
 **Weather Observation Station 5**
 
 *Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*

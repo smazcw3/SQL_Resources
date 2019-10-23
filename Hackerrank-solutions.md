@@ -292,7 +292,7 @@ SELECT ROUND(SUM(LAT_N),4) FROM STATION WHERE LAT_N > 38.7880 AND LAT_N < 137.23
 
 **Weather Observation Station 14**
 
-*Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to 4 decimal places.*
+*Query the greatest value of the Northern Latitudes (LAT_N) from **STATION** that is less than 137.2345. Truncate your answer to 4 decimal places.*
 
 ~~~
 SELECT ROUND(MAX(LAT_N),4) FROM STATION WHERE LAT_N < 137.2345;
@@ -302,7 +302,7 @@ SELECT ROUND(MAX(LAT_N),4) FROM STATION WHERE LAT_N < 137.2345;
 
 **Weather Observation Station 15**
 
-*Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to 4 decimal places.*
+*Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in **STATION** that is less than 137.2345. Round your answer to 4 decimal places.*
 
 ~~~
 SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N < 137.2345 ORDER BY LAT_N DESC LIMIT 1;
@@ -310,6 +310,57 @@ SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N < 137.2345 ORDER BY LAT_N DESC 
 
 ***
 
+**Weather Observation Station 16**
+
+*Query the smallest Northern Latitude (LAT_N) from **STATION** that is greater than 38.7780. Round your answer to 4 decimal places.*
+
+~~~
+SELECT ROUND(LAT_N, 4) FROM STATION WHERE LAT_N > 38.7780 ORDER BY LAT_N LIMIT 1;
+~~~
+
+***
+
+**Weather Observation Station 17**
+
+*Query the Western Longitude (LONG_W) where the smallest Northern Latitude (LAT_N) in **STATION** is greater than 38.7780. Round your answer to 4 decimal places.*
+
+~~~
+SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N > 38.7780 ORDER BY LAT_N LIMIT 1;
+~~~
+
+***
+
+**Weather Observation Station 18**
+
+*Consider P1(a,b) and P2(c,d) to be two points on a 2D plane*.
+
+ - **a** happens to equal the minimum value in Northern Latitude (LAT_N in STATION).
+ 
+ - **b** happens to equal the minimum value in Western Longitude (LONG_W in STATION).
+ 
+ - **c** happens to equal the maximum value in Northern Latitude (LAT_N in STATION).
+ 
+ - **d** happens to equal the maximum value in Western Longitude (LONG_W in STATION).
+ 
+*Query the Manhattan Distance between points P1 and P2 and round it to a scale of 4 decimal places.*
+
+~~~
+SELECT ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)), 4) FROM STATION;
+~~~
+
+***
+
+**Weather Observation Station 19**
+
+*Consider P1 and P2 to be two points on a 2D plane where (a,b) are the respective minimum and maximum values of Northern Latitude (LAT_N) and (c,d) are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.*
+
+*Query the Euclidean Distance between points P1 and P2 and format your answer to display 4 decimal digits.*
+
+~~~
+
+~~~
+
+***
 
 
 

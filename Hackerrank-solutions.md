@@ -86,7 +86,13 @@ SELECT COUNT(CITY) - COUNT(DISTINCT(CITY)) FROM STATION;
 *Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*
 
 ~~~
-
+(SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY), CITY LIMIT 1)
+UNION
+(SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1);
 ~~~
 
 ***
@@ -226,6 +232,18 @@ SELECT CITY.NAME FROM CITY LEFT JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code 
 SELECT COUNTRY.Continent, FLOOR(AVG(CITY.POPULATION)) 
 FROM CITY INNER JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code 
 GROUP BY COUNTRY.CONTINENT;
+~~~
+
+***
+
+**Contest Leaderboard**
+
+*You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, too!
+
+The total score of a hacker is the sum of their maximum scores for all of the challenges. Write a query to print the hacker_id, name, and total score of the hackers ordered by the descending score. If more than one hacker achieved the same total score, then sort the result by ascending hacker_id. Exclude all hackers with a total score of 0 from your result.*
+
+~~~
+
 ~~~
 
 ***
